@@ -2,7 +2,7 @@
   "semi": true,
   "trailingComma": "all",
   "singleQuote": true,
-  "cursorOffset": -1,
+  "cursorOffset": 1,
   "useTabs": false,
   "bracketSpacing": true,
   "tabWidth": 2
