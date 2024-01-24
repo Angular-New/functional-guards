@@ -11,14 +11,15 @@ export const authGuard: CanActivateFn = (): Observable<boolean> => {
 
   return _currentUserService.currentUser$.pipe(
     // @ts-ignore
-    filter((currentUser) => currentUser !== undefined),
-    map((currentUser: ICurrentUser) => {
+    filter((currentUser): boolean => currentUser !== undefined),
+    map((currentUser: ICurrentUser): boolean => {
       if (!currentUser) {
-        _router.navigateByUrl('/').then((r) => {});
+        _router.navigateByUrl('/');
+
         return false;
-      } else {
-        return true;
       }
+
+      return true;
     }),
   );
 };
